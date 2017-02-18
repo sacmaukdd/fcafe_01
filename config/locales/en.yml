@@ -23,6 +23,9 @@ en:
   category1: "Category 1"
   category2: "Category 2"
   category3: "Category 3"
+  shop_types:
+    show:
+      shop_type_not_found: "Shop type not found"
   layouts:
     header:
       signup: "Sign up"
@@ -115,6 +118,10 @@ en:
   images:
     max_size_error: "Maximum file size is 5MB. Please choose a smaller file."
   admin:
+    shop_types:
+      index:
+        shop_types: "Shop Types"
+        overview: "Overview"
     layouts:
       left_bar:
         username: "Username"

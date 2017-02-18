@@ -47,7 +47,7 @@
                 </div>
               </td>
               <td>
-                <%= link_to shop_path(shop), method: :delete,
+                <%= link_to shop_path(shop.id), method: :delete,
                   data: {confirm: t("sure")}, class: "btn btn-danger" do %>
                   <i class="fa fa-times"><%= t "cancel" %></i>
                 <% end %>

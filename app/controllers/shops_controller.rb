@@ -1,11 +1,18 @@
 class ShopsController < ApplicationController
-  before_action :load_shop, only: [:edit, :update, :destroy]
+  before_action :load_shop, except: [:index, :new, :create]
   before_action :load_shop_type, only: [:index, :edit]
 
   def index
     @shops = Shop.order_date_desc.shop_by_user(current_user.id).waiting
       .paginate page: params[:page], per_page: Settings.per_page
     @shop = Shop.new
+  end
+
+  def show
+    @value_rate = Rate.of_shop(params[:id])
+      .find_by user_id: current_user.id if user_signed_in?
+    @rate = Rate.new
+    @avg_rating = @shop.avg_rate
   end
 
   def create

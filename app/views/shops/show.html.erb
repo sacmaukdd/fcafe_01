@@ -1,0 +1,16 @@
+<section class="site-content site-section">
+  <div class="container">
+    <h4><%= t "rating" %></h4>
+    <% if @value_rate.present? %>
+      <div id="rateit_star1" data-rateit-readonly="true"
+        data-rateit-value="<%= @value_rate.num_rate %>"></div>
+    <% else %>
+      <div id="rateit_star1"></div>
+    <% end %>
+    <%= form_for @rate, remote: true do |f| %>
+      <%= f.hidden_field :num_rate, id: :star_rs %>
+      <%= f.hidden_field :shop_id, value: @shop.id %>
+    <% end %>
+    <%= t "ratings"%> <%= "#{@avg_rating}" %>
+  </div>
+</section>

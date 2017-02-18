@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :suggestions, except: [:update, :show, :edit]
   resources :shops
+  resources :rates, only: [:create]
 
   namespace :admin do
     get "/" => "staticpages#index"
