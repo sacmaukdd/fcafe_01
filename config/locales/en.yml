@@ -202,8 +202,18 @@ en:
     albums:
       create:
         album_exist: "Album exist"
+        can_not_create: "Can not create"
+        create_complete: "Create complete"
+        not_create: "Not create"
       update:
         album_exist: "Album exist"
+        album_updated: "Album updated"
+        album_not_update: "Album not update"
+        can_not_update: "Can not update"
+    images:
+      create:
+        image_not_create: "Image not create"
+        album_not_found: "Album not found"
     tables:
       index:
         new_table: "New Table"

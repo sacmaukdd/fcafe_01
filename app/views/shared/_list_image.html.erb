@@ -1,0 +1,20 @@
+<div class="row" id="picture">
+  <% images.each do |image| %>
+    <div class="col-sm-3 gallery-image image-full gallery" data-toggle="lightbox-gallery">
+      <%= image_tag image.picture, class: "image-gallery image-full" %>
+      <div class="gallery-image-options text-center">
+        <div class="btn-group btn-group-sm">
+          <%= link_to "View", "#{image.picture}",
+            class: "gallery-link btn btn-sm btn-alt btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-sm-3 gallery-image image-full gallery" data-toggle="lightbox-gallery">
+  <%= form_for [:shop_owner, shop, album, @image], remote: true do |f| %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :album_id, value: album.id %>
+    <%= f.submit "Add" %>
+  <% end %>
+  </div>
+</div>

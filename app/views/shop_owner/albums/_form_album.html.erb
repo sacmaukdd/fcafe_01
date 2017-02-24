@@ -6,15 +6,15 @@
   <% end %>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for [:shop_owner, @album] do |f| %>
+      <%= form_for [:shop_owner, :shop, @album] do |f| %>
         <%= render "shared/error_messages", object: f.object %>
         <%= f.label :name %>
         <%= f.text_field :name, required: true %>
-
         <% unless @edit_page == Settings.action_edit %>
+          <%= f.file_field :picture, multiple: true %>
+
           <%= f.hidden_field :shop_id, value: @shop_id %>
         <% end %>
-
         <%= f.submit (t "add"), class: "btn btn-primary" %>
       <% end %>
     </div>

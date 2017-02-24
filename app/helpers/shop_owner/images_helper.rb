@@ -1,0 +1,2 @@
+module ShopOwner::ImagesHelper
+end

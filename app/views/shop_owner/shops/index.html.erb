@@ -24,7 +24,8 @@
       <td><%= shop.shop_type_name %></td>
       <td><%= link_to t(".table"), shop_owner_tables_path(id: shop.id),
         class: "label label-info" %></td>
-      <td><%= link_to t(".albums"), shop_owner_albums_path(id: shop.id),
+      <td><%= link_to t(".albums"),
+        shop_owner_shop_albums_path(shop_id: shop.id),
         class: "label label-success" %>
       </td>
       <td>

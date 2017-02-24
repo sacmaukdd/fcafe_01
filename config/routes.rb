@@ -13,9 +13,12 @@ Rails.application.routes.draw do
   end
 
   namespace :shop_owner do
+    resources :shops do
+      resources :albums do
+        resources :images
+      end
+    end
   	resources :suggestions, only: [:index, :update, :destroy]
-    resources :shops
-    resources :albums
     resources :tables
   end
 end
